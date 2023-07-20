@@ -30,6 +30,7 @@ func registerMiddleware(r *gin.Engine) {
 	middlewares.RegisterSwaggerMiddleware(r)
 	// 404
 	r.NoRoute(middlewares.NoRouteHandler)
+	r.Use(middlewares.Trace)
 }
 
 // 设置路由

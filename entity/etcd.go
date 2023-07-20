@@ -6,3 +6,8 @@ type ETCDDataSource struct {
 	// Host      string   `json:"host"`
 	//Port      string   `json:"port"`
 }
+
+type KeyValue struct {
+	Key   string `json:"key"`
+	Value string `json:"value"`
+}
