@@ -101,8 +101,8 @@ func ConnectETCD(name string) error {
 
 	// 创建一个 etcd 客户端连接
 	cli, err := clientv3.New(clientv3.Config{
-		Endpoints:   []string{"http://localhost:2379"}, // etcd 服务器地址
-		DialTimeout: 5 * time.Second,                   // 连接超时时间
+		Endpoints:   etcd.DataSource.Endpoints, // etcd 服务器地址
+		DialTimeout: 5 * time.Second,           // 连接超时时间
 	})
 	if err != nil {
 		return err
