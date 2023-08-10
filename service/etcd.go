@@ -84,9 +84,12 @@ func DeleteEtcdDatasource(name string) error {
 		return fmt.Errorf("not Found etcd: %s", name)
 	}
 
+	os.Remove("config/datasources/" + name)
+
 	_ = DisConnectETCD(name)
 
 	delete(etcds, name)
+
 	return nil
 }
 

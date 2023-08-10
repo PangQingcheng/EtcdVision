@@ -16,6 +16,8 @@ func InitRouter() *gin.Engine {
 	r.Use(gzip.Gzip(gzip.DefaultCompression, gzip.WithExcludedPathsRegexs([]string{".*"})))
 	// gin中间件注册
 	registerMiddleware(r)
+	// 静态web
+	r.Static("/console", "web/")
 	// 路由注册
 	setUpRouter(r)
 	return r
